@@ -26,7 +26,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.12;text-wrap:b
 .hand{font-family:var(--hand);font-weight:400}
 
 /* header */
-.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;flex-wrap:wrap}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;padding-bottom:22px;flex-wrap:wrap}
 .mark{font-family:var(--display);font-weight:600;font-size:20px;text-decoration:none;letter-spacing:.01em}
 .mark span{font-family:var(--hand);font-weight:400;color:var(--orange);font-size:18px;margin-left:6px}
 .top nav{display:flex;gap:22px;flex-wrap:wrap;font-size:16px}
