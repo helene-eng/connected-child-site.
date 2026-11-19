@@ -106,7 +106,7 @@ a.card:hover .go{color:var(--orange)}
 .note-card h2{font-size:clamp(28px,3.2vw,38px)}
 .note-body{max-width:64ch}
 .sig{display:flex;align-items:center;gap:16px;margin-top:24px;padding-top:20px;border-top:1.5px dashed var(--line)}
-.sig img{width:92px;flex:none}
+.sig img{width:104px;flex:none}
 .sig p{margin:0;display:grid;gap:2px}
 .sig-name{font-family:var(--hand);font-weight:700;font-size:26px;color:var(--forest);line-height:1.1}
 .sig-line{font-size:16px;color:var(--ink-soft)}

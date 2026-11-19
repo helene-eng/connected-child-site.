@@ -39,6 +39,10 @@
 .topic li{font-size:16px;line-height:1.5}
 .topic li a{font-weight:700;white-space:nowrap;text-decoration:none;border-bottom:1.5px solid currentColor;margin-left:4px}
 .topic .s-note{display:block;font-family:var(--hand);font-size:17px;color:var(--ink-soft);margin-top:2px}
+.wcard.across{--c:var(--forest);--soft:#fffdf6;border:1.5px solid var(--line);border-top:8px solid var(--forest)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chips span{font-size:13px;font-weight:700;border-radius:999px;padding:2px 10px;background:#fff;border:1.5px solid var(--c)}
+.why-it{margin:4px 0 12px;font-size:16px;color:var(--ink-soft);max-width:70ch}
 .soon{font-family:var(--hand);font-size:20px;color:var(--ink-soft);margin:6px 0 0}
 /* books */
 .shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
@@ -112,6 +116,19 @@
       <li><b>Honest about limits</b>When a study shows a link, not cause and effect, I say so.</li>
       <li><b>Plain words</b>I translate the findings, but I don’t stretch them.</li>
     </ul>
+
+    <article class="wcard across" id="across">
+      <div class="wcard-top"><h3>Across the worlds: places and policy</h3></div>
+      <p class="why-it">Most sources here look at what happens in a family. This one zooms out to the neighborhood, the city, and the laws that shape them. It is written to guide policymakers, which is a reminder that a child’s world is also built by the choices communities make together.</p>
+      <div class="topic">
+        <h4>Place matters</h4>
+        <ul>
+          <li>National Scientific Council on the Developing Child (2023). <em>Place Matters: The Environment We Create Shapes the Foundations of Healthy Development</em>. Working Paper No. 16. Center on the Developing Child at Harvard University. <a href="https://developingchild.harvard.edu/wp-content/uploads/2024/10/HCDC_WP16_R2A.pdf">Read it</a><span class="s-note">How air, water, climate, housing, green space, food access, and transportation shape children’s health from before birth, and which policies can help.</span>
+            <div class="chips"><span style="--c:var(--inner)">Inner: food and toxins</span><span style="--c:var(--living)">Living: green space and climate</span><span style="--c:var(--forest)">Home and neighborhood</span></div></li>
+          <li>Center on the Developing Child at Harvard University. Research, explainers, and short videos on early childhood development. <a href="https://developingchild.harvard.edu/">Visit</a></li>
+        </ul>
+      </div>
+    </article>
 
     <article class="wcard inner" id="inner">
       <div class="wcard-top"><h3>The Inner World</h3><a href="inner-world.html">Visit the Inner World →</a></div>
