@@ -70,7 +70,7 @@ details.src ul{margin:8px 0 0;padding-left:18px;display:grid;gap:4px}
 .pack button:hover{background:var(--orange)}
 .pack .thanks{grid-column:1/-1;color:var(--forest);font-size:19px}
 
-.links{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:8px}
 .link{--c:var(--ink);display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:start;background:#fffdf6;border:1.5px solid var(--line);border-radius:18px;padding:18px;text-decoration:none}
 .link img{width:64px;height:64px;object-fit:contain}
 .link h4{font-family:var(--display);font-weight:600;font-size:19px;margin:0 0 4px;color:var(--c);filter:brightness(.85)}
@@ -234,3 +234,9 @@ a.link:hover{border-color:var(--c);transform:translateY(-2px)}
 .quote{font-family:var(--hand);font-size:clamp(22px,2.4vw,27px);line-height:1.35;color:var(--forest);border-left:4px solid var(--w);padding-left:16px;margin:12px 0}
 .spark-row{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))!important}
 @media (max-width:620px){.tickets,.puzzle{grid-template-columns:1fr}.track li{font-size:15px}}
+.photo{border-radius:16px 20px 14px 18px;box-shadow:0 14px 28px -18px rgba(30,51,40,.55);transform:rotate(-.8deg)}
+.findings .finding:nth-child(even) .photo{transform:rotate(.8deg)}
+.wide-art{margin-top:22px;background:#fffdf6;border-radius:18px;padding:18px 18px 10px}
+.wide-art img{width:100%}
+.links .link{grid-template-columns:1fr;gap:8px;align-content:start}
+.links .link img{width:56px;height:56px}
