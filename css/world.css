@@ -1,6 +1,6 @@
 /* World page layout: a field-journal column with a hand-drawn accent in the world's color. */
 
-.w-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding:28px 0 40px}
+.w-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding-top:28px;padding-bottom:40px}
 .w-crumb{font-family:var(--hand);font-size:20px;color:var(--orange);text-decoration:none}
 .w-crumb:hover{text-decoration:underline}
 .w-title{display:flex;align-items:center;gap:16px;margin:10px 0 6px}
@@ -239,4 +239,4 @@ a.link:hover{border-color:var(--c);transform:translateY(-2px)}
 .wide-art{margin-top:22px;background:#fffdf6;border-radius:18px;padding:18px 18px 10px}
 .wide-art img{width:100%}
 .links .link{grid-template-columns:1fr;gap:8px;align-content:start}
-.links .link img{width:56px;height:56px}
+.links .link img{width:56px;height:56px;object-fit:contain}

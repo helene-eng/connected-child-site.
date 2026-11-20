@@ -38,7 +38,7 @@
       <a class="spot" data-world="inner"     href="inner-world.html"     style="left:1.5%;width:15%"  aria-label="The Inner World"></a>
       <a class="spot" data-world="living"    href="living-world.html"    style="left:16.5%;width:15.5%" aria-label="The Living World"></a>
       <a class="spot" data-world="moving"    href="moving-world.html"    style="left:32%;width:16%"   aria-label="The Moving World"></a>
-      <a class="spot" data-world="imagined"  href="#signup"              style="left:48%;width:17.5%" aria-label="The Imagined World, opening soon"></a>
+      <a class="spot" data-world="imagined"  href="imagined-world.html"  style="left:48%;width:17.5%" aria-label="The Imagined World"></a>
       <a class="spot" data-world="wondering" href="#signup"              style="left:66%;width:14.5%" aria-label="The Wondering World, opening soon"></a>
       <a class="spot" data-world="social"    href="#signup"              style="left:81.5%;width:18%" aria-label="The Social World, opening soon"></a>
     </div>
@@ -82,16 +82,16 @@
           <span class="go">Explore →</span>
         </div>
       </a>
-      <div class="card imagined soon" data-world="imagined">
+      <a class="card imagined" data-world="imagined" href="imagined-world.html">
         <img src="img/imagined.webp" alt="" width="96" height="96">
         <div>
           <div class="num">World four</div>
           <h3>The Imagined World</h3>
           <p class="what">Play, stories, and possibilities</p>
           <p class="tag">What else could this become?</p>
-          <span class="soon-label">Opening soon</span>
+          <span class="go">Explore →</span>
         </div>
-      </div>
+      </a>
       <div class="card wondering soon" data-world="wondering">
         <img src="img/wondering.webp" alt="" width="96" height="96">
         <div>
@@ -236,12 +236,12 @@
 
 <script>
 // Pages that exist so far. Add a world here once its page is published.
-const BUILT = ['inner','living','moving'];
+const BUILT = ['inner','living','moving','imagined'];
 const WORLDS = {
   inner:{name:"The Inner World",desc:"microbes, food, and developing biological systems",open:true},
   living:{name:"The Living World",desc:"soil, plants, animals, water, and weather",open:true},
   moving:{name:"The Moving World",desc:"running, climbing, balancing, building, and falling",open:true},
-  imagined:{name:"The Imagined World",desc:"play, stories, and possibilities",open:false},
+  imagined:{name:"The Imagined World",desc:"play, stories, and possibilities",open:true},
   wondering:{name:"The Wondering World",desc:"questions, attention, and discovery",open:false},
   social:{name:"The Social World",desc:"affection, love, friendship, laughter, family, and community",open:false}
 };

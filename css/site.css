@@ -175,3 +175,4 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .thread img{animation:none}
   .card{transition:none}
 }
+@media (max-width:720px){.thread{margin:0}}
