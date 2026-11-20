@@ -11,41 +11,26 @@
 <link rel="stylesheet" href="css/site.css">
 <link rel="stylesheet" href="css/world.css">
 <style>:root{--w:var(--imagined);--w-soft:#DCE8F8}
-/* ---- Imagined World: a little night-sky magic ---- */
-@keyframes twinkle{0%,100%{opacity:.35}50%{opacity:1}}
-@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.w-hero{position:relative}
-.w-hero::before{content:"";position:absolute;inset:-10px 0 0 40%;pointer-events:none;
+/* ---- Imagined World: soft twilight ---- */
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.w-hero-img{animation:drift 8s ease-in-out infinite}
+#noticed .side img{filter:drop-shadow(0 18px 36px rgba(78,143,224,.22))}
+#research{position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#EEF2FB 0%,#E7ECF8 55%,#F2EDF8 100%)}
+#research::before{content:"";position:absolute;top:22px;right:4%;width:220px;height:120px;pointer-events:none;opacity:.9;
   background:
-   radial-gradient(circle,#F3C969 0 2px,transparent 3px) 8% 12%/1px 1px no-repeat,
-   radial-gradient(circle,#F3C969 0 2px,transparent 3px) 0 0/140px 120px,
-   radial-gradient(circle,#9DBCE8 0 1.5px,transparent 2.5px) 60px 50px/170px 150px;
-  opacity:.55;animation:twinkle 4s ease-in-out infinite;mask-image:linear-gradient(90deg,transparent,#000 30%,#000 85%,transparent)}
-.w-hero-img{animation:drift 7s ease-in-out infinite}
-#noticed .side img{filter:drop-shadow(0 18px 36px rgba(78,143,224,.25))}
-#research{position:relative;overflow:hidden;color:#EEF2FB;
-  background:linear-gradient(180deg,#1F2B52 0%,#273A6B 55%,#34508A 100%)}
-#research::before,#research::after{content:"";position:absolute;inset:0;pointer-events:none}
-#research::before{background:
-   radial-gradient(circle,#fff 0 1.2px,transparent 2px) 0 0/97px 89px,
-   radial-gradient(circle,#F3C969 0 1.6px,transparent 2.6px) 40px 30px/173px 151px,
-   radial-gradient(circle,#cfe0ff 0 1px,transparent 1.8px) 20px 70px/61px 67px;
-  opacity:.45;animation:twinkle 5s ease-in-out infinite}
-#research::after{background:radial-gradient(circle,#fff 0 1.4px,transparent 2.4px) 70px 10px/131px 117px;opacity:.35;animation:twinkle 3.3s ease-in-out infinite reverse}
-#research .wrap{position:relative;z-index:1}
-#research .w-label{color:#F3C969}
-#research .big,#research .finding h3{color:#fff}
-#research .finding .prose p{color:#DCE4F5}
-#research .feel{color:#F3C969}
-#research .finding .n{background:#F3C969;color:#1F2B52;box-shadow:0 0 18px rgba(243,201,105,.55)}
-#research .research{color:var(--ink)}
-#research .pull{color:#F3C969}
-#research .finding-body .side img{width:min(320px,100%);aspect-ratio:1;object-fit:contain;border-radius:50%;padding:30px;
-  background:radial-gradient(circle,#FFFBF0 0 60%,#F6EBD0 70%,rgba(246,235,208,0) 71%);
-  box-shadow:0 0 0 6px rgba(243,201,105,.18),0 0 60px rgba(243,201,105,.35);animation:drift 8s ease-in-out infinite}
-#research .finding:nth-child(even) .side img{animation-delay:-4s}
+   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23F3C969' d='M12 2l2.6 6.9L22 9.5l-5.6 4.7L18 22l-6-3.8L6 22l1.6-7.8L2 9.5l7.4-.6z'/%3E%3C/svg%3E") 10px 50px/22px no-repeat,
+   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23F3C969' d='M12 2l2.6 6.9L22 9.5l-5.6 4.7L18 22l-6-3.8L6 22l1.6-7.8L2 9.5l7.4-.6z'/%3E%3C/svg%3E") 90px 10px/30px no-repeat,
+   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9' fill='%23FFF6DA' stroke='%23E9C46A' stroke-width='1.5'/%3E%3C/svg%3E") 160px 46px/46px no-repeat}
+#research .w-label{color:#4E8FE0}
+#research .finding .n{background:#F3C969;color:#1E3328;box-shadow:0 0 0 6px rgba(243,201,105,.25)}
+#research .feel,#research .pull{color:#2F4A86}
+#research .finding-body .side img{width:min(380px,100%);filter:drop-shadow(0 14px 22px rgba(47,74,134,.16));animation:drift 9s ease-in-out infinite}
+#research .finding:nth-child(even) .side img{animation-delay:-4.5s}
+.research-close{position:relative;max-width:860px;margin:64px auto 0;text-align:center;font-family:var(--hand);font-size:clamp(24px,2.7vw,32px);line-height:1.45;color:#2F4A86;padding:34px 30px 28px;background:#FFFDF6;border-radius:28px 22px 30px 24px;box-shadow:0 10px 30px rgba(47,74,134,.10)}
+.research-close::before{content:"✦";position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:40px;height:40px;line-height:40px;border-radius:50%;background:#F3C969;color:#fff;font-size:20px}
 .lesson .l-art img{filter:drop-shadow(0 6px 10px rgba(30,51,40,.08))}
-@media (prefers-reduced-motion:reduce){.w-hero::before,.w-hero-img,#research::before,#research::after,#research .finding-body .side img{animation:none}}
+@media (prefers-reduced-motion:reduce){.w-hero-img,#research .finding-body .side img{animation:none}}
 </style>
 </head>
 <body>
@@ -71,7 +56,7 @@
           <h1>The Imagined World</h1>
         </div>
       </div>
-      <p class="w-tag">Imagination creates new worlds and new stories, and puts a new light on our everyday life.</p>
+      <p class="w-tag">A child’s imagination is so powerful. It lets us see the world for the first time again, with all the wonder and excitement that comes with it.</p>
       <p class="w-topics">pretend · invent · tell stories · disappear</p>
       
     </div>
@@ -108,8 +93,8 @@
           <div>
             <h3>Children imagine with what they know</h3>
             <div class="finding-body">
-              <div><div class="prose"><p>A cardboard box in our living room became a pirate ship last weekend.</p><p>The idea didn’t come from nowhere. It was a mix of stories we’ve read, boats we’ve seen, and our own ideas about what a real ship might be like.</p></div><div class="research"><div class="k">Researchers tell us</div><p>Children’s imagination is often more rooted in reality than adults assume. They draw on their experiences and memories to create new possibilities.</p><p>Pretend play is linked to thinking about alternatives: for example, imagining how things might have been different.</p><p>From around age three, children become increasingly able to tell the difference between what is real and what is imagined.</p><details class="src"><summary>Sources</summary><ul><li>Harris, P. L. (2021). Early constraints on the imagination: The realism of young children. <em>Child Development</em>, 92, 466–483.</li><li>Francis, G. A. &amp; Gibson, J. L. (2023). A plausible role of imagination in pretend play, counterfactual reasoning, and executive functions. <em>British Journal of Psychology</em>, 114(3), 749–770.</li><li>Sharon, T. &amp; Woolley, J. D. (2004). Do monsters dream? Young children’s understanding of the fantasy/reality distinction. <em>British Journal of Developmental Psychology</em>, 22, 293–310.</li></ul></details></div></div>
-              <div class="side"><img src="img/im-pirate.webp" width="1000" height="722" alt="Illustration of a crocodile in a paper hat looking through a telescope from a cardboard pirate ship on the waves."><p class="pull">The more there is to discover, the more there is to imagine.</p></div>
+              <div><div class="prose"><p>“Mom, is this real?” my son used to ask me. “Does it matter?”</p><p>I would tell him: it’s real in your imagination. It becomes a story that brings your friends together and makes you all happy, in real life. Imagination often leads to real feelings and real shared moments, the ones we love most.</p></div><div class="research"><div class="k">Researchers tell us</div><p>Children’s imagination is more rooted in reality than we often assume. They build their pretend worlds from what they have seen, heard, and lived, so every new experience gives them more to imagine with.</p><p>Pretend play seems to draw on the same skill as imagining how things could have turned out differently: keeping the real world in mind while exploring another one.</p><p>From around age three, children get steadily better at telling what is real from what is pretend. That is what lets them dive deep into a story, and step back out again.</p><details class="src"><summary>Sources</summary><ul><li>Harris, P. L. (2021). Early constraints on the imagination: The realism of young children. <em>Child Development</em>, 92, 466–483.</li><li>Francis, G. A. &amp; Gibson, J. L. (2023). A plausible role of imagination in pretend play, counterfactual reasoning, and executive functions. <em>British Journal of Psychology</em>, 114(3), 749–770.</li><li>Sharon, T. &amp; Woolley, J. D. (2004). Do monsters dream? Young children’s understanding of the fantasy/reality distinction. <em>British Journal of Developmental Psychology</em>, 22, 293–310.</li></ul></details></div></div>
+              <div class="side"><img src="img/im-whisk.webp" width="1000" height="694" alt="Illustration of a smiling girl sitting cross-legged, holding up a kitchen whisk with wavy orange streamers like a jellyfish floating over blue waves."><p class="pull">The more there is to discover, the more there is to imagine.</p></div>
             </div>
           </div>
         </article>
@@ -118,8 +103,8 @@
           <div>
             <h3>Stories help children explore what is possible</h3>
             <div class="finding-body">
-              <div><p class="feel">A story can open a new way of seeing the real world.</p><div class="research"><div class="k">Researchers tell us</div><p>Pretend play helps children understand that an object can be one thing and also something else.</p><p>Fantastical stories can sometimes help children learn real ideas, like scientific principles, better than realistic stories.</p><p>Children can learn a lot from stories: new words, concepts, and ideas, especially when adults help them connect the story to the real world.</p><details class="src"><summary>Sources</summary><ul><li>Weisberg, D. S. (2015). Pretend play. <em>WIREs Cognitive Science</em>, 6(3), 249–261.</li><li>Hopkins, E. J. &amp; Weisberg, D. S. (2021). Investigating the effectiveness of fantasy stories for teaching scientific principles. <em>Journal of Experimental Child Psychology</em>, 203, 105047.</li><li>Hopkins, E. J. &amp; Weisberg, D. S. (2017). The youngest readers’ dilemma: A review of children’s learning from fictional sources. <em>Developmental Review</em>, 43, 48–70.</li></ul></details></div></div>
-              <div class="side"><img src="img/im-rocket.webp" width="1000" height="530" alt="Illustration of a child in a cardboard rocket looking through a telescope toward snowy mountains."></div>
+              <div><p class="feel">A story can open a new way of seeing the real world.</p><div class="research"><div class="k">Researchers tell us</div><p>When a whisk becomes a jellyfish, a child is practicing something important: understanding that one thing can stand for another. Researchers link this kind of pretend play to symbolic thinking.</p><p>Fantastical stories, the dragons-and-magic kind, can sometimes help young children learn real ideas, like scientific principles, even better than realistic stories do.</p><p>Children learn the most from a story when an adult helps them connect it to real life: “Remember the real boat we saw at the lake?”</p><details class="src"><summary>Sources</summary><ul><li>Weisberg, D. S. (2015). Pretend play. <em>WIREs Cognitive Science</em>, 6(3), 249–261.</li><li>Hopkins, E. J. &amp; Weisberg, D. S. (2021). Investigating the effectiveness of fantasy stories for teaching scientific principles. <em>Journal of Experimental Child Psychology</em>, 203, 105047.</li><li>Hopkins, E. J. &amp; Weisberg, D. S. (2017). The youngest readers’ dilemma: A review of children’s learning from fictional sources. <em>Developmental Review</em>, 43, 48–70.</li></ul></details></div></div>
+              <div class="side"><img src="img/im-dragon.webp" width="1000" height="684" alt="Illustration of a laughing child running behind a big red dragon riding a small blue bicycle, with an open book left on the ground."></div>
             </div>
           </div>
         </article>
@@ -128,8 +113,8 @@
           <div>
             <h3>Free time is where imagination grows</h3>
             <div class="finding-body">
-              <div><div class="prose"><p>Free play and free time give a child the chance to develop their imagination and to learn to do things on their own.</p><p>Today, many kids don’t know what to do with free time, yet it’s an important skill to develop. Being bored matters too, and as parents, we need to learn to be comfortable seeing our kids bored.</p></div><div class="research"><div class="k">Researchers tell us</div><p>In one study of 6- and 7-year-olds, children who spent more time in less-structured activities, like free play, were better at directing their own thinking without an adult telling them what to do next. More time in structured, adult-led activities went with the opposite. This is a link, not proof of cause and effect.</p><p>The American Academy of Pediatrics recommends play for every child. Pediatricians describe play as key to building executive function (the skills to plan, focus, and manage ourselves) and as a buffer against stress, and they note that children’s playtime has been shrinking for decades.</p><p>Researchers who study boredom argue that it is a normal emotion that can lead to learning and creativity. Most of this work comes from interviews and theory rather than experiments, but the idea is simple: boredom is often the moment before a child’s own idea arrives.</p><details class="src"><summary>Sources</summary><ul><li>Barker, J. E. et al. (2014). Less-structured time in children’s daily lives predicts self-directed executive functioning. <em>Frontiers in Psychology</em>, 5, 593.</li><li>Yogman, M. et al. &amp; AAP Committee on Psychosocial Aspects of Child and Family Health (2018). The power of play: A pediatric role in enhancing development in young children. <em>Pediatrics</em>, 142(3), e20182058.</li><li>Belton, T. &amp; Priyadharshini, E. (2007). Boredom and schooling: A cross-disciplinary exploration. <em>Cambridge Journal of Education</em>, 37(4), 579–595.</li></ul></details></div></div>
-              <div class="side"><img src="img/im-cape.webp" width="1000" height="1012" alt="Illustration of a child in a red cape stepping from a cushion onto a cardboard box, beside a blanket fort, with a rocket, a castle, and planets in the sky."><p class="pull">Learn to be comfortable seeing them bored.</p></div>
+              <div><div class="prose"><p>Free play and free time give a child the chance to develop their imagination and to learn to do things on their own.</p><p>Today, many kids don’t know what to do with free time, yet it’s an important skill to develop. Being bored matters too, and as parents, we need to learn to be comfortable seeing our kids bored.</p></div><div class="research"><div class="k">Researchers tell us</div><p>In one study of 6- and 7-year-olds, children who spent more time in less-structured activities, like free play, were better at directing their own thinking, without an adult telling them what to do next. More time in structured, adult-led activities tended to go the opposite way.</p><p>Pediatricians at the American Academy of Pediatrics now encourage a “prescription for play.” They describe play as key to the skills children use to plan, focus, and manage themselves, and as a buffer against stress, at a time when children’s free playtime has been shrinking for decades.</p><details class="src"><summary>Sources</summary><ul><li>Barker, J. E. et al. (2014). Less-structured time in children’s daily lives predicts self-directed executive functioning. <em>Frontiers in Psychology</em>, 5, 593.</li><li>Yogman, M. et al. &amp; AAP Committee on Psychosocial Aspects of Child and Family Health (2018). The power of play: A pediatric role in enhancing development in young children. <em>Pediatrics</em>, 142(3), e20182058.</li></ul></details></div></div>
+              <div class="side"><img src="img/im-ant.webp" width="1000" height="411" alt="Illustration of a boy lying on the sidewalk, chin on his hands, watching an ant carry a yellow petal much bigger than itself."><p class="pull">Learn to be comfortable seeing them bored.</p></div>
             </div>
           </div>
         </article>
@@ -138,12 +123,13 @@
           <div>
             <h3>Children can imagine what comes next</h3>
             <div class="finding-body">
-              <div><div class="prose"><p>I used to think of imagination as make-believe.</p><p>But it also appears when a child packs a water bottle for tomorrow’s walk, or spends days inventing a world with its own places and characters.</p></div><div class="research"><div class="k">Researchers tell us</div><p>Between ages three and five, children become better at anticipating future needs, such as hunger, thirst, or cold. In one study, children imagined themselves in scenes like a cold, snowy walk and chose one item to bring. With age, they more often picked the one item that would solve the need they were about to have, and could explain why.</p><p>Planning ahead takes a big leap in these same years. Researchers see a major step forward in children’s ability to think about the future between ages 3 and 5.</p><p>Imagination can help. In one experiment, 4-year-olds who first imagined saving marbles for a bigger game later, and how happy that would feel, were about three times as likely to save (57% versus 19%).</p><details class="src"><summary>Sources</summary><ul><li>Atance, C. M. &amp; Meltzoff, A. N. (2005). My future self: Young children’s ability to anticipate and explain future states. <em>Cognitive Development</em>, 20, 341–361.</li><li>Moffett, L., Moll, H. &amp; FitzGibbon, L. (2018). Future planning in preschool children. <em>Developmental Psychology</em>.</li><li>Zhang, J., Vohs, K. D. &amp; Carlson, S. M. (2024). Imagining the future improves saving in preschoolers. <em>Journal of Experimental Child Psychology</em>, 246, 105966.</li></ul></details></div></div>
-              <div class="side"><img src="img/im-myworld.webp" width="1000" height="652" alt="Illustration of a child at a desk drawing a map called “My World,” next to a checklist for tomorrow’s hike."><p class="pull">Imagination helps children explore futures and worlds beyond the present.</p></div>
+              <div><div class="prose"><p>I used to think of imagination as make-believe.</p><p>But it also appears when a child packs a water bottle for tomorrow’s walk, or spends days inventing a world with its own places and characters.</p></div><div class="research"><div class="k">Researchers tell us</div><p>Between ages three and five, children get much better at anticipating what they will need later, such as food for when they’ll be hungry, or warm clothes for the cold. In one study, children imagined themselves in scenes like a snowy walk and chose one item to bring. With age, they more often picked the one that would solve the need, and could explain why.</p><p>Planning ahead takes a big leap in these same years. Researchers see a major step forward in children’s ability to think about the future between ages 3 and 5.</p><details class="src"><summary>Sources</summary><ul><li>Atance, C. M. &amp; Meltzoff, A. N. (2005). My future self: Young children’s ability to anticipate and explain future states. <em>Cognitive Development</em>, 20, 341–361.</li><li>Moffett, L., Moll, H. &amp; FitzGibbon, L. (2018). Future planning in preschool children. <em>Developmental Psychology</em>.</li></ul></details></div></div>
+              <div class="side"><img src="img/im-myworld.webp" width="1000" height="652" alt="Illustration of a child at a desk drawing a map called “My World,” next to a checklist for tomorrow’s hike."></div>
             </div>
           </div>
         </article>
       </div>
+      <p class="research-close">Imagination is how my kids discover what they love. It lets them feel what someone else feels, invent their own words and worlds, wander into the past, and try on the future. It brings them joy, it brings them together, and it fills their days with wonder. It’s the spark that makes anything possible.</p>
     </div>
   </section>
 
