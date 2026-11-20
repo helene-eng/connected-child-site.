@@ -10,7 +10,43 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Kalam:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css">
 <link rel="stylesheet" href="css/world.css">
-<style>:root{--w:var(--imagined);--w-soft:#DCE8F8}</style>
+<style>:root{--w:var(--imagined);--w-soft:#DCE8F8}
+/* ---- Imagined World: a little night-sky magic ---- */
+@keyframes twinkle{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.w-hero{position:relative}
+.w-hero::before{content:"";position:absolute;inset:-10px 0 0 40%;pointer-events:none;
+  background:
+   radial-gradient(circle,#F3C969 0 2px,transparent 3px) 8% 12%/1px 1px no-repeat,
+   radial-gradient(circle,#F3C969 0 2px,transparent 3px) 0 0/140px 120px,
+   radial-gradient(circle,#9DBCE8 0 1.5px,transparent 2.5px) 60px 50px/170px 150px;
+  opacity:.55;animation:twinkle 4s ease-in-out infinite;mask-image:linear-gradient(90deg,transparent,#000 30%,#000 85%,transparent)}
+.w-hero-img{animation:drift 7s ease-in-out infinite}
+#noticed .side img{filter:drop-shadow(0 18px 36px rgba(78,143,224,.25))}
+#research{position:relative;overflow:hidden;color:#EEF2FB;
+  background:linear-gradient(180deg,#1F2B52 0%,#273A6B 55%,#34508A 100%)}
+#research::before,#research::after{content:"";position:absolute;inset:0;pointer-events:none}
+#research::before{background:
+   radial-gradient(circle,#fff 0 1.2px,transparent 2px) 0 0/97px 89px,
+   radial-gradient(circle,#F3C969 0 1.6px,transparent 2.6px) 40px 30px/173px 151px,
+   radial-gradient(circle,#cfe0ff 0 1px,transparent 1.8px) 20px 70px/61px 67px;
+  opacity:.45;animation:twinkle 5s ease-in-out infinite}
+#research::after{background:radial-gradient(circle,#fff 0 1.4px,transparent 2.4px) 70px 10px/131px 117px;opacity:.35;animation:twinkle 3.3s ease-in-out infinite reverse}
+#research .wrap{position:relative;z-index:1}
+#research .w-label{color:#F3C969}
+#research .big,#research .finding h3{color:#fff}
+#research .finding .prose p{color:#DCE4F5}
+#research .feel{color:#F3C969}
+#research .finding .n{background:#F3C969;color:#1F2B52;box-shadow:0 0 18px rgba(243,201,105,.55)}
+#research .research{color:var(--ink)}
+#research .pull{color:#F3C969}
+#research .finding-body .side img{width:min(320px,100%);aspect-ratio:1;object-fit:contain;border-radius:50%;padding:30px;
+  background:radial-gradient(circle,#FFFBF0 0 60%,#F6EBD0 70%,rgba(246,235,208,0) 71%);
+  box-shadow:0 0 0 6px rgba(243,201,105,.18),0 0 60px rgba(243,201,105,.35);animation:drift 8s ease-in-out infinite}
+#research .finding:nth-child(even) .side img{animation-delay:-4s}
+.lesson .l-art img{filter:drop-shadow(0 6px 10px rgba(30,51,40,.08))}
+@media (prefers-reduced-motion:reduce){.w-hero::before,.w-hero-img,#research::before,#research::after,#research .finding-body .side img{animation:none}}
+</style>
 </head>
 <body>
 
@@ -35,9 +71,9 @@
           <h1>The Imagined World</h1>
         </div>
       </div>
-      <p class="w-tag">What else could this become?</p>
+      <p class="w-tag">Imagination creates new worlds and new stories, and puts a new light on our everyday life.</p>
       <p class="w-topics">pretend · invent · tell stories · disappear</p>
-      <div class="w-question"><h2>Same stick. Different worlds.</h2><p>Let the child decide what happens next.</p></div>
+      
     </div>
     <img class="w-hero-img" src="img/im-spread.webp" width="1600" height="900" alt="Illustration of a child’s hand holding a stick that turns into a mast, with a flag, a sailboat, and a watercolor sea flowing toward a sign that says “elsewhere.”">
   </section>
@@ -55,10 +91,10 @@
     <div class="wrap two">
       <div class="prose">
         <div class="w-label">What I noticed</div>
-        <h2 class="big">When a story spills into play</h2>
-        <p>I love watching a story spill into play.</p><p>A cushion becomes a mountain. A cardboard box becomes a rocket.</p><p>Suddenly, the ordinary room has a whole new set of rules.</p>
+        <h2 class="big">Like walking in a storybook</h2>
+        <p>Childhood is a time when most of the day is about imagination.</p><p>It’s like walking in a storybook, and it’s just magical.</p><p>It opens up so many possibilities: for emotions, for joy, and for bringing kids together to play.</p>
       </div>
-      <div class="side" style="display:grid;gap:16px;justify-items:center"><img src="img/im-hero.webp" width="1400" height="1353" alt="Photo of a child peeking out of a cardboard box, with a hand-drawn mast, sail, sun, and waves turning the box into a boat."><p class="pull">What else could this become?</p></div>
+      <div class="side" style="display:grid;gap:16px;justify-items:center"><img src="img/im-portal.webp" width="900" height="843" alt="Watercolor of an open door leading to a night sea, with a crescent moon, pink clouds, and a paper boat on the water."></div>
     </div>
   </section>
 
@@ -90,10 +126,10 @@
         <article class="finding">
           <div class="n">3</div>
           <div>
-            <h3>Leave a little room for wonder</h3>
+            <h3>Free time is where imagination grows</h3>
             <div class="finding-body">
-              <div><div class="prose"><p>Not every afternoon needs a plan.</p><p>Sometimes all it takes is a few objects, a question, a little encouragement, and the freedom to decide what happens next.</p></div><div class="research"><div class="k">Researchers tell us</div><p>Research on guided play suggests that children can benefit when adults introduce an idea or challenge while leaving them meaningful freedom to explore.</p><p>However, evidence that pretend play on its own causes broad developmental gains remains mixed.</p><details class="src"><summary>Sources</summary><ul><li>Skene, K. et al. (2022). Can guidance during play enhance children’s learning and development in educational contexts? A systematic review and meta-analysis. <em>Child Development</em>, 93(4), 1162–1180.</li><li>Lillard, A. S. et al. (2013). The impact of pretend play on children’s development: A review of the evidence. <em>Psychological Bulletin</em>, 139(1), 1–34.</li></ul></details></div></div>
-              <div class="side"><img src="img/im-cape.webp" width="1000" height="1012" alt="Illustration of a child in a red cape stepping from a cushion onto a cardboard box, beside a blanket fort, with a rocket, a castle, and planets in the sky."><p class="pull">Give children something to explore. Leave them room to surprise you.</p></div>
+              <div><div class="prose"><p>Free play and free time give a child the chance to develop their imagination and to learn to do things on their own.</p><p>Today, many kids don’t know what to do with free time, yet it’s an important skill to develop. Being bored matters too, and as parents, we need to learn to be comfortable seeing our kids bored.</p></div><div class="research"><div class="k">Researchers tell us</div><p>In one study of 6- and 7-year-olds, children who spent more time in less-structured activities, like free play, were better at directing their own thinking without an adult telling them what to do next. More time in structured, adult-led activities went with the opposite. This is a link, not proof of cause and effect.</p><p>The American Academy of Pediatrics recommends play for every child. Pediatricians describe play as key to building executive function (the skills to plan, focus, and manage ourselves) and as a buffer against stress, and they note that children’s playtime has been shrinking for decades.</p><p>Researchers who study boredom argue that it is a normal emotion that can lead to learning and creativity. Most of this work comes from interviews and theory rather than experiments, but the idea is simple: boredom is often the moment before a child’s own idea arrives.</p><details class="src"><summary>Sources</summary><ul><li>Barker, J. E. et al. (2014). Less-structured time in children’s daily lives predicts self-directed executive functioning. <em>Frontiers in Psychology</em>, 5, 593.</li><li>Yogman, M. et al. &amp; AAP Committee on Psychosocial Aspects of Child and Family Health (2018). The power of play: A pediatric role in enhancing development in young children. <em>Pediatrics</em>, 142(3), e20182058.</li><li>Belton, T. &amp; Priyadharshini, E. (2007). Boredom and schooling: A cross-disciplinary exploration. <em>Cambridge Journal of Education</em>, 37(4), 579–595.</li></ul></details></div></div>
+              <div class="side"><img src="img/im-cape.webp" width="1000" height="1012" alt="Illustration of a child in a red cape stepping from a cushion onto a cardboard box, beside a blanket fort, with a rocket, a castle, and planets in the sky."><p class="pull">Learn to be comfortable seeing them bored.</p></div>
             </div>
           </div>
         </article>
@@ -102,7 +138,7 @@
           <div>
             <h3>Children can imagine what comes next</h3>
             <div class="finding-body">
-              <div><div class="prose"><p>I used to think of imagination as make-believe.</p><p>But it also appears when a child packs a water bottle for tomorrow’s walk, or spends days inventing a world with its own places and characters.</p></div><div class="research"><div class="k">Researchers tell us</div><p>Between ages three and five, children become better at anticipating future needs, such as hunger, thirst, or cold.</p><p>In two studies of children aged 8 to 12, about one in six described detailed imaginary worlds with recurring places, characters, and stories. These children created more inventive story endings, but did not score higher on every measure of creativity.</p><details class="src"><summary>Sources</summary><ul><li>Atance, C. M. &amp; Meltzoff, A. N. (2005). My future self: Young children’s ability to anticipate and explain future states. <em>Cognitive Development</em>, 20, 341–361.</li><li>Taylor, M., Mottweiler, C. M., Aguiar, N. R., Naylor, E. R. &amp; Levernier, J. G. (2020). Paracosms: The imaginary worlds of middle childhood. <em>Child Development</em>, 91(1), e164–e178.</li></ul></details></div></div>
+              <div><div class="prose"><p>I used to think of imagination as make-believe.</p><p>But it also appears when a child packs a water bottle for tomorrow’s walk, or spends days inventing a world with its own places and characters.</p></div><div class="research"><div class="k">Researchers tell us</div><p>Between ages three and five, children become better at anticipating future needs, such as hunger, thirst, or cold. In one study, children imagined themselves in scenes like a cold, snowy walk and chose one item to bring. With age, they more often picked the one item that would solve the need they were about to have, and could explain why.</p><p>Planning ahead takes a big leap in these same years. Researchers see a major step forward in children’s ability to think about the future between ages 3 and 5.</p><p>Imagination can help. In one experiment, 4-year-olds who first imagined saving marbles for a bigger game later, and how happy that would feel, were about three times as likely to save (57% versus 19%).</p><details class="src"><summary>Sources</summary><ul><li>Atance, C. M. &amp; Meltzoff, A. N. (2005). My future self: Young children’s ability to anticipate and explain future states. <em>Cognitive Development</em>, 20, 341–361.</li><li>Moffett, L., Moll, H. &amp; FitzGibbon, L. (2018). Future planning in preschool children. <em>Developmental Psychology</em>.</li><li>Zhang, J., Vohs, K. D. &amp; Carlson, S. M. (2024). Imagining the future improves saving in preschoolers. <em>Journal of Experimental Child Psychology</em>, 246, 105966.</li></ul></details></div></div>
               <div class="side"><img src="img/im-myworld.webp" width="1000" height="652" alt="Illustration of a child at a desk drawing a map called “My World,” next to a checklist for tomorrow’s hike."><p class="pull">Imagination helps children explore futures and worlds beyond the present.</p></div>
             </div>
           </div>
@@ -115,11 +151,11 @@
     <div class="wrap two">
       <div class="prose">
         <div class="w-label">What it changed at home</div>
-        <h2 class="big">Before anyone called it talent</h2>
-        <p>It often starts with a simple curiosity.</p><p>Jane Goodall watched hens for hours. Charles Darwin collected shells, stones, and plants. J.R.R. Tolkien was fascinated by ancient languages and legends. Albert Einstein imagined chasing a beam of light.</p><p>What sparks a child’s curiosity today can grow into a lifelong passion.</p>
+        <h2 class="big">It tells you who your child is</h2>
+        <p>I started to think that what gets our kids excited and curious as children tells us something about what they might love as they grow up. It also shows you how they think, and how they handle their emotions.</p><p>The imagined world is so powerful. It makes children happy. They imagine stories, and they get excited and passionate about what they do. They explore the world through their imagination. They have fun with friends and family. They make the day magical, creating imaginary places and tales that light up their hearts.</p><p>It tells you so much about who your child is and what they love: what they need to be happy, and what they are curious about.</p><p>Some of the people we now call brilliant started the same way. Jane Goodall watched hens for hours. Charles Darwin collected shells, stones, and plants. J.R.R. Tolkien was fascinated by ancient languages and legends. Albert Einstein was spellbound by a compass his father showed him when he was four or five.</p>
         <p class="pull">Notice what fascinates them.</p>
       </div>
-      <img src="img/im-talent.webp" width="1600" height="955" alt="Pencil illustration of four children: Jane Goodall watching a hen in a henhouse, J.R.R. Tolkien reading myths and languages, Charles Darwin sorting stones and shells, and Albert Einstein reaching toward a beam of sunlight, linked by a winding line around a hand-drawn map.">
+      <img src="img/im-talent.webp" width="1600" height="955" alt="Pencil illustration of four children: Jane Goodall watching a hen in a henhouse, J.R.R. Tolkien reading myths and languages, Charles Darwin sorting stones and shells, and Albert Einstein reaching toward the sky, linked by a winding line around a hand-drawn map.">
     </div>
   </section>
 
@@ -138,7 +174,7 @@
       <nav class="ex-menu" aria-label="Activities on this page" style="--cols:4"><a href="#act-door" class="m1"><b>1</b>Open a secret door</a><a href="#act-objects" class="m2"><b>2</b>Give ordinary things secret lives</a><a href="#act-world" class="m3"><b>3</b>Build an impossible world</a><a href="#act-character" class="m4"><b>4</b>Invent someone who has never existed</a><a href="#act-story" class="m1"><b>5</b>Continue the story</a><a href="#act-words" class="m2"><b>6</b>Play with words</a><a href="#act-space" class="m3"><b>7</b>Protect the empty space</a></nav>
       
       <article class="lesson l1" id="act-door">
-        <div class="l-art"><img src="img/im-a1-tree.webp" width="800" height="758" alt="Photo of a child in a blue raincoat crouching to look at a tiny fairy door at the base of a mossy tree."></div>
+        <div class="l-art"><img src="img/im-a1-trio.webp" width="852" height="279" alt="Drawings of a golden key, a garden arch, and an envelope sealed with a heart."></div>
         <div class="l-body"><div class="l-num">Activity 1</div>
           <h3>Open a secret door</h3>
           <p class="l-tag">Leave one mysterious beginning. Don’t explain it.</p>
@@ -146,7 +182,7 @@
           <div class="facts"><div><span>You’ll need</span>A key, a feather, a tiny envelope, a blanket, or a piece of chalk</div><div><span>Where</span>A windowsill, a hallway, the backyard</div></div><h4 class="l-h">Three ways in</h4><ol class="steps4"><li><b>Leave a clue</b>A key on a windowsill. A feather in a shoe. A tiny envelope beneath a chair.</li><li><b>Find the portal</b>Choose a gate, a blanket fort, or a chalk line. Decide what changes when you cross it.</li><li><b>A message from elsewhere</b>Begin a note: “Dear People of the Kitchen, we urgently need…”</li></ol><div class="science"><b>The science bit</b> Research on guided play suggests children can learn more when an adult sets up an idea or a challenge and then lets them lead. A clue with no explanation does exactly that.</div></div>
       </article>
       <article class="lesson l2 flip" id="act-objects">
-        <div class="l-art"><img src="img/im-a2.webp" width="1400" height="758" alt="Illustrations of everyday objects with secret lives: a spoon with a crown and a microphone, a scarf that becomes a dog’s tail, a cardboard tube telescope, a stick that becomes a boat, footprints leading to a door, and a sneaker saying “Oh, you wouldn’t believe some of the places I’ve been.”"></div>
+        <div class="l-art"><div style="display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap"><img src="img/im-a2-spoon.webp" width="400" height="591" alt="A spoon wearing a crown and singing into a tiny microphone: even a spoon has a voice." style="width:150px"><img src="img/im-a2-shoe.webp" width="800" height="328" alt="An old blue sneaker saying “Oh, you wouldn’t believe some of the places I’ve been.”" style="width:300px"></div></div>
         <div class="l-body"><div class="l-num">Activity 2</div>
           <h3>Give ordinary things secret lives</h3>
           <p class="l-tag">Choose one everyday object and ask what else it could be.</p>
@@ -159,10 +195,10 @@
           <h3>Build an impossible world</h3>
           <p class="l-tag">Draw the place before you know the story.</p>
           <p>Then let each new detail create the next question.</p>
-          <div class="facts"><div><span>You’ll need</span>A big sheet of paper, pencils, or markers</div><div><span>Time</span>One afternoon, then add to it for weeks</div></div><h4 class="l-h">How to build it</h4><ol class="steps4"><li><b>Map it</b>Add a moving forest, a forbidden lake, and a path that disappears at lunchtime.</li><li><b>Make the laws</b>Everyone whispers on Tuesdays. Arguments are settled by dancing. Invent three of your own.</li><li><b>Turn the room upside down</b>Don’t move the furniture. Change what it means. The ceiling is now the ground. How will we travel?</li></ol><h4 class="l-h">Our laws</h4><div class="tickets"><div class="ticket">Everyone whispers on Tuesdays.</div><div class="ticket">Arguments are settled by dancing.</div><div class="ticket">Law #3: ______________</div></div><div class="science"><b>The science bit</b> Some children invent whole imaginary worlds, with their own places, rules, and even languages. In two studies of 8- to 12-year-olds, about one in six had one, and these world-builders told more inventive stories. A map and a few laws is a way to start at any age.</div></div>
+          <div class="facts"><div><span>You’ll need</span>A big sheet of paper, pencils, or markers</div><div><span>Time</span>One afternoon, then add to it for weeks</div></div><h4 class="l-h">How to build it</h4><ol class="steps4"><li><b>Map it</b>Add a moving forest, a forbidden lake, and a path that disappears at lunchtime.</li><li><b>Make the laws</b>Everyone whispers on Tuesdays. Arguments are settled by dancing. Invent three of your own.</li><li><b>Turn the room upside down</b>Don’t move the furniture. Change what it means. The ceiling is now the ground. How will we travel?</li></ol><h4 class="l-h">Our laws</h4><div class="tickets"><div class="ticket">Everyone whispers on Tuesdays.</div><div class="ticket">Arguments are settled by dancing.</div><div class="ticket">Law #3: ______________</div></div><div class="science"><b>The science bit</b> Inventing a world means making up rules and following them through: if everyone whispers on Tuesdays, what happens at the party? Researchers link this kind of “what if” thinking in pretend play to reasoning about alternatives to reality.</div></div>
       </article>
       <article class="lesson l4 flip" id="act-character">
-        <div class="l-art"><img src="img/im-a4-fort.webp" width="900" height="600" alt="Photo of four children lying under a blanket fort strung with star lights, drawing and reading together."><div style="display:flex;gap:14px;align-items:end;justify-content:center"><img src="img/im-a4-whale.webp" width="400" height="419" alt="Drawing of a whale with rabbit ears, followed by a line of ants." style="width:150px"><img src="img/im-a4-hero.webp" width="400" height="279" alt="Drawing of a masked superhero with a toast emblem holding up a spatula with toast." style="width:150px"></div></div>
+        <div class="l-art"><img src="img/im-a4-whale.webp" width="400" height="419" alt="Watercolor of a whale with rabbit ears, followed by a line of busy ants." style="width:min(300px,100%)"><div style="display:flex;gap:18px;align-items:end;justify-content:center"><img src="img/im-a4-hero.webp" width="400" height="279" alt="Drawing of a masked superhero with a toast emblem, proudly holding up toast on a fork." style="width:170px"><img src="img/im-a4-guest.webp" width="400" height="176" alt="Drawing of a place set at the table for an invisible guest." style="width:190px"></div></div>
         <div class="l-body"><div class="l-num">Activity 4</div>
           <h3>Invent someone who has never existed</h3>
           <p class="l-tag">Begin with one impossible character.</p>
@@ -170,7 +206,7 @@
           <div class="facts"><div><span>You’ll need</span>Paper, crayons, and maybe an extra chair at the table</div><div><span>Time</span>A meal, a bath, or a car ride</div></div><h4 class="l-h">Three ways to begin</h4><ol class="steps4"><li><b>Mix three animals</b>Rabbit ears, a whale body, ant-organizing habits. Add one embarrassing weakness.</li><li><b>Invite an invisible guest</b>Set an extra place. Decide what they eat, and why only children can see them.</li><li><b>A terrible superhero</b>Give your hero an almost useless power. What emergency can only they solve?</li></ol><div class="science"><b>The science bit</b> Imaginary companions are common and healthy: in one study, 65% of children had one by age 7. Researchers have also linked this kind of role play to a better understanding of other people’s thoughts and feelings.</div><div class="science"><b>Try this</b> Don’t call the space beneath the table a fort. Ask what appeared.</div></div>
       </article>
       <article class="lesson l1" id="act-story">
-        <div class="l-art"><img src="img/im-a5-walk.webp" width="859" height="796" alt="Photo of a parent and a child walking a dog down a leafy sidewalk at sunset, with a sticky note asking “What happens next?”"><img src="img/im-a5-cat.webp" width="400" height="218" alt="Drawing of a curious cat looking up." style="width:170px"></div>
+        <div class="l-art"><img src="img/im-a5-walk.webp" width="859" height="796" alt="Photo of a parent and a child walking a dog down a leafy sidewalk at sunset, with a sticky note asking “What happens next?”"></div>
         <div class="l-body"><div class="l-num">Activity 5</div>
           <h3>Continue the story</h3>
           <p class="l-tag">Today is just one chapter.</p>
@@ -178,7 +214,7 @@
           <div class="facts"><div><span>You’ll need</span>Nothing but a walk, a window, or a car ride</div><div><span>Where</span>Anywhere you already go</div></div><h4 class="l-h">Here’s how to play</h4><ol class="steps4"><li><b>Notice something</b>Look for a clue in the world: a sound, a sign, a person, an animal, or anything that makes you curious.</li><li><b>Ask a question</b>What could be happening? Who might be here? Where could they be going?</li><li><b>Add to the story</b>Tell the next part: out loud, in your head, or by drawing it. Keep going. There are no wrong answers!</li></ol><div class="science"><b>The science bit</b> Children learn a lot from stories, and they learn more when adults help them connect the story to the real world. Turning a walk into the next chapter does exactly that.</div><div class="science"><b>The takeaway</b> Same world. New possibilities.</div></div>
       </article>
       <article class="lesson l2 flip" id="act-words">
-        <div class="l-art"><img src="img/im-a6-word.webp" width="900" height="863" alt="A child’s hand writing the made-up word “blontergg” on torn paper, with notes asking if it is a creature, a sound, or something else entirely."><img src="img/im-a6-cat.webp" width="500" height="421" alt="Drawing of a cat asleep on a stack of sentence strips that grow longer: The cat sat down, on the warm windowsill, wearing a tiny hat, next to a sleepy plant, while a very small breeze told a story about the sea." style="width:280px"></div>
+        <div class="l-art"><img src="img/im-a6-cat.webp" width="500" height="421" alt="Drawing of a cat asleep on a stack of sentence strips that grow longer: The cat sat down, on the warm windowsill, wearing a tiny hat, next to a sleepy plant, while a very small breeze told a story about the sea." style="width:min(380px,100%)"></div>
         <div class="l-body"><div class="l-num">Activity 6</div>
           <h3>Play with words</h3>
           <p class="l-tag">Invent words for things ordinary language forgot to name.</p>
@@ -186,7 +222,7 @@
           <div class="facts"><div><span>You’ll need</span>Just your voices, and paper if you want to draw them</div><div><span>Time</span>All day: use the new words at breakfast, in the car, and at bedtime</div></div><h4 class="l-h">Four word games</h4><ol class="steps4"><li><b>A secret language</b>Name the feeling of warm socks, the sound of a spoon falling, and the moment before laughter.</li><li><b>Collect excellent nonsense</b>Plimp. Wobberdash. Snuzzle. Is it a creature, a sound, or a tiny disaster?</li><li><b>An impossible menu</b>Serve cloud soup, roasted moon corners, and a salad that tells jokes.</li><li><b>Make a sentence grow</b>Begin with “The cat sat down.” Take turns adding details until the sentence can barely stand.</li></ol><div class="science"><b>The science bit</b> Rhyming, swapping sounds, and making up nonsense words all exercise phonological awareness: hearing how words are built from smaller sounds. It’s one of the strongest early predictors of later reading.</div></div>
       </article>
       <article class="lesson l3" id="act-space">
-        <div class="l-art"><img src="img/im-a7-box.webp" width="800" height="942" alt="Photo of a child’s hands reaching into a cardboard box of fabric, yarn, corks, and cardboard tubes."><img src="img/im-a7-three.webp" width="900" height="283" alt="Drawings of a box of unfinished things, a blanket fort left standing, and a sealed letter to be opened when we have flying shoes."></div>
+        <div class="l-art"><img src="img/im-a7-box.webp" width="800" height="942" alt="Photo of a child’s hands reaching into a cardboard box of fabric, yarn, corks, and cardboard tubes."></div>
         <div class="l-body"><div class="l-num">Activity 7</div>
           <h3>Protect the empty space</h3>
           <p class="l-tag">Leave some materials, stories, and time unfinished.</p>
@@ -195,7 +231,7 @@
       </article>
       <div class="sparks">
         <h3 class="g-label">Quick sparks for any day</h3>
-        <div class="spark-row"><div class="spark"><img src="img/im-moon.webp" width="290" height="292" alt="Drawing of a full moon."><b>Ask “what else?”</b><p>A cushion, a box, a spoon: ask what it could become, then ask again.</p></div><div class="spark"><img src="img/im-a4-guest.webp" width="400" height="176" alt="Drawing of a dinner place set for an invisible guest."><b>Set an extra place</b><p>Invite an invisible guest to dinner. What do they eat?</p></div><div class="spark"><img src="img/im-a7-shoes.webp" width="400" height="215" alt="Drawing of two sneakers with wings."><b>Notice what fascinates them</b><p>What sparks a child’s curiosity today can grow into a lifelong passion.</p></div></div>
+        <div class="spark-row"><div class="spark"><img src="img/im-moon.webp" width="290" height="292" alt="Drawing of a full moon."><b>Ask “what else?”</b><p>A cushion, a box, a spoon: ask what it could become, then ask again.</p></div><div class="spark"><img src="img/im-a5-cat.webp" width="400" height="218" alt="Drawing of a curious cat looking up."><b>Ask what happens next</b><p>On the walk home, point at a window, a cat, or a closed gate. Who lives there? What happens next?</p></div><div class="spark"><img src="img/im-a7-shoes.webp" width="400" height="215" alt="Drawing of two sneakers with wings."><b>Notice what fascinates them</b><p>What sparks a child’s curiosity today can grow into a lifelong passion.</p></div></div>
       </div>
 
       <div class="pack" id="join">
