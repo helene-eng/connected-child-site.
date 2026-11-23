@@ -555,7 +555,7 @@
             <li><strong>All four activities, ready to print</strong><span>Taste with your senses, the belly &amp; body weather report, invent a family flavor, and travel through a spice.</span></li>
             <li><strong>Plus the quick sparks</strong><span>Little ideas to stick on the fridge for any day of the week.</span></li>
           </ul>
-          <form id="pack-form" novalidate>
+          <form id="pack-form" data-world="inner" novalidate>
             <div class="field">
               <label for="pack-email">Email</label>
               <input id="pack-email" type="email" autocomplete="email" required>
@@ -609,19 +609,6 @@
   </div>
 </footer>
 
-<script>
-document.getElementById('pack-form').addEventListener('submit', e => {
-  e.preventDefault();
-  const email = document.getElementById('pack-email');
-  const t = document.getElementById('pack-thanks');
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
-    t.textContent = 'Please check your email address.';
-    email.focus();
-    return;
-  }
-  // Connect to the Inner World Kit form here.
-  t.textContent = 'Preview only: sign-up is not connected yet.';
-});
-</script>
+<script src="js/signup.js"></script>
 </body>
 </html>

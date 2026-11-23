@@ -222,6 +222,7 @@
               <option value="inner">The Inner World</option>
               <option value="living">The Living World</option>
               <option value="moving">The Moving World</option>
+              <option value="imagined">The Imagined World</option>
             </select>
           </div>
           <label class="check" for="printed"><input id="printed" type="checkbox"> Tell me when the printed journal is available</label>
@@ -294,22 +295,11 @@ document.querySelectorAll('a[data-world]').forEach(a => {
   });
 });
 
-document.getElementById('form').addEventListener('submit', e => {
-  e.preventDefault();
-  const email = document.getElementById('email');
-  const t = document.getElementById('thanks');
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
-    t.textContent = 'Please check your email address.';
-    email.focus();
-    return;
-  }
-  // Connect to the email tool here (MailerLite, Kit, etc.) once one is chosen.
-  t.textContent = 'Preview only: sign-up is not connected yet.';
-});
 document.getElementById('apply').addEventListener('click', e => {
   e.preventDefault();
   e.currentTarget.textContent = 'Application form coming soon';
 });
 </script>
+<script src="js/signup.js"></script>
 </body>
 </html>

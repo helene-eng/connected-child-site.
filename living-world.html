@@ -199,7 +199,7 @@
           <div class="w-label">Free with the Collective</div>
           <h3>Get the Living World activity pack</h3>
           <ul><li><strong>All five activities, ready to print</strong><span>Big worlds across time and space, a tiny world, catching the weather, a museum of ordinary wonders, and caring for something alive.</span></li><li><strong>Plus the quick sparks</strong><span>Little ideas to stick on the fridge for any day of the week.</span></li></ul>
-          <form id="pack-form" novalidate>
+          <form id="pack-form" data-world="living" novalidate>
             <div class="field">
               <label for="pack-email">Email</label>
               <input id="pack-email" type="email" autocomplete="email" required>
@@ -243,14 +243,7 @@ document.querySelectorAll('.spin').forEach(sp => {
   const opts = JSON.parse(sp.dataset.options); const out = sp.querySelector('output'); let last = -1;
   sp.querySelector('button').addEventListener('click', () => { let i; do { i = Math.floor(Math.random() * opts.length); } while (i === last && opts.length > 1); last = i; out.textContent = opts[i]; });
 });
-document.getElementById('pack-form').addEventListener('submit', e => {
-  e.preventDefault();
-  const email = document.getElementById('pack-email');
-  const t = document.getElementById('pack-thanks');
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { t.textContent = 'Please check your email address.'; email.focus(); return; }
-  // Connect to this world's Kit form here.
-  t.textContent = 'Preview only: sign-up is not connected yet.';
-});
 </script>
+<script src="js/signup.js"></script>
 </body>
 </html>
