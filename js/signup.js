@@ -44,16 +44,16 @@ if (ccPack) ccPack.addEventListener('submit', e => {
   ccSubscribe(ccPack.dataset.world, email.value).then(r => ccMessage(t, r));
 });
 
-/* Landing page: name, email, world choice, printed-journal checkbox */
+/* Landing page: name, email, world choice, new-world checkbox */
 const ccMain = document.getElementById('form');
 if (ccMain) ccMain.addEventListener('submit', e => {
   e.preventDefault();
   const email = document.getElementById('email');
   const t = document.getElementById('thanks');
   if (!ccValidEmail(email.value)) { t.textContent = 'Please check your email address.'; email.focus(); return; }
-  const printed = document.getElementById('printed');
+  const newWorld = document.getElementById('newworld');
   ccSubscribe(document.getElementById('world').value, email.value,
               document.getElementById('name').value,
-              printed && printed.checked ? { printed_journal: 'yes' } : {})
+              newWorld && newWorld.checked ? { new_world_alerts: 'yes' } : {})
     .then(r => ccMessage(t, r));
 });
